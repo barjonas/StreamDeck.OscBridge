@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>Default action properties</title>
+    <link rel="stylesheet" href="sdpi.css">
+    <script src="sdtools.common.js"></script>
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <details class="message">
+            <summary>For help, see <span class="linkspan" onclick="openWebsite()">Github project page</span></summary>
+        </details>
+        <div class="sdpi-item" id="dvGroupIndex">
+            <div class="sdpi-item-label">Group index</div>
+            <input class="sdpi-item-value sdProperty" value="0" type="number" id="groupIndex" oninput="setSettings()">
+        </div>
+        <div class="sdpi-item" id="dvButtonIndex">
+            <div class="sdpi-item-label">Button index within group</div>
+            <input class="sdpi-item-value sdProperty" value="0" type="number" id="buttonIndex" oninput="setSettings()">
+        </div>
+        <footer xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <span property="dc:dateCopyrighted">2020</span>
+            <span property="dc:publisher">Barjonas LLC</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+    "Actions": [
+        {
+            "Icon": "Images/actionDefault",
+            "Name": "Default button",
+            "States": [
+                {
+                    "Image": "Images/keyDefault",
+                    "TitleAlignment": "middle",
+                    "FontSize": "12"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "Tooltip": "A button which can have an icon and a background.",
+            "UUID": "com.barjonas.streamdeck.oscbridge.defaultbutton",
+            "PropertyInspectorPath": "PropertyInspector/DefaultAction.html"
+        },
+        {
+            "Icon": "Images/actionMedia",
+            "Name": "Media button",
+            "States": [
+                {
+                    "Image": "Images/keyMedia",
+                    "TitleAlignment": "middle",
+                    "FontSize": "12"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "Tooltip": "A button which represents a media item in a directory.",
+            "UUID": "com.barjonas.streamdeck.oscbridge.mediabutton",
+            "PropertyInspectorPath": "PropertyInspector/DefaultAction.html"
+        }
+    ],
+    "Author": "Hamish Barjonas",
+    "Name": "OSC Bridge",
+    "Description": "A brige to allow Stream Desk to integrate with anything with OSC support.",
+    "Icon": "Images/categoryIcon",
+    "URL": "https://www.barjonas.com/",
+    "Version": "1.0",
+    "CodePath": "com.barjonas.streamdeck.oscbridge.exe",
+    "Category": "OSC Bridge",
+    "CategoryIcon": "Images/categoryIcon",
+    "OS": [
+        {
+            "Platform": "windows",
+            "MinimumVersion": "10"
+        }
+    ],
+    "SDKVersion": 2,
+    "Software": {
+        "MinimumVersion": "4.3"
+    }
+}
