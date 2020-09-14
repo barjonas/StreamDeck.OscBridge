@@ -7,7 +7,9 @@ The OSC master can set the background, icon and label of each button. The plugin
 The OSC master can provide a path to a directory containing media for each group of Media Buttons. Each image or movie the plugin finds in the directory will be displayed on a button in the group. Whenever a button is pressed, the path of its associated media is sent to the OSC master.
 ## Installation ##
 ### Prerequisites ###
-This plugin is compiled as a .NET Core 3.1 [framework-dependent executable][6]. That means you will need to have the [.NET Core 3.1 Desktop Runtime][7] for your platform installed before installing the plugin. 
+#### .NET Core ####
+This plugin is compiled as a .NET Core 3.1 [framework-dependent executable][6]. That means you will need to have the [.NET Core 3.1 Desktop Runtime][7] for your platform installed before installing the plugin.
+#### FFmpeg ####
 To display frames from movies, the plugin expects to find `ffmpeg.exe` and `ffprobe.exe` at `%programfiles%\ffmpeg\bin`. You can get these from any good public FFmpeg build such as [these linked on the FFmpeg site][5].
 ### Importing into Stream Deck ###
 When built and packaged, this project ends up as a single file called `com.barjonas.streamdeck.oscbridge.streamDeckPlugin`. By default, this file type is associated with `StreamDeck.exe`, which will use this file to install the plugin.
@@ -17,7 +19,7 @@ Ventuz project defines the directories from which all media should be pulled are
 ## Implementing OSC Master ##
 To use the plugin as-is, you can simply interact with it through OSC. All OSC messages should be sent to localhost (127.0.0.1) port 7823. All strings are expected to be Unicode, encoded in an OSC Blob. The addresses that the plugin listens to are listed here:
 Address | Type | Example value | Description
-------- | ------------- | -----------
+------- | ---- | ------------- | -----------
 /Config/RequestPort | Integer| 7822 | The port to which messages from the plugin will be sent.
 /Config/BackgroundDirectory | String | %localappdata%\Barjonas\StreamDeck.OscBridge\Backgrounds | The directory in which the plugin should look for background images.
 /Config/IconDirectory | String | %localappdata%\Barjonas\StreamDeck.OscBridge\Icons | The directory in which the plugin should look for foreground images.
@@ -29,7 +31,7 @@ Address | Type | Example value | Description
 
 The address that the plugin sends to are:
 Address | Type | Example value | Description
-------- | ------------- | -----------
+------- | ---- | ------------- | -----------
 /RequestRefresh | Void | | Send by the plugin on startup. The OSC master should respond by resending all values.
 /DefaultButtons/{g}/{i}| Void | | A button with index {i} in group {g} was pressed.
 /MediaButtonSets/{g} | String | C:\Users\user\AppData\Local\Barjonas\StreamDeck.OscBridge\Movies\GhostbustersII.mp4 | A button in group {g} was pressed. The string contains the absolute path to that button's associated media.
